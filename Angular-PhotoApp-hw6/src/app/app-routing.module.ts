@@ -1,0 +1,22 @@
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { AlbumsComponent } from './albums/albums.component';
+import { AlbumDetailsComponent} from './album-details/album-details.component';
+import { UploadPhotosComponent } from './upload-photos/upload-photos.component';
+import { CreateAlbumComponent } from './create-album/create-album.component';
+
+const routes: Routes = [
+    { path: 'albums', component: AlbumsComponent },
+    { path: 'albums/create', component: CreateAlbumComponent },
+    { path: 'album/:albumId/:albumTitle', component: AlbumDetailsComponent },
+    { path: 'upload-photo/:albumId', component: UploadPhotosComponent },
+
+
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+ 
